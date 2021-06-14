@@ -1,0 +1,82 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - express
+  - end
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+  - text: "try this, these are helpful tool to use"
+  - text: "these are some suggested exercises for the relaxation"
+  - text: "you must see one of this"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "is this help you?"
+  - text: "hope you are feeling more relaxed now"
+  - text: "was that helpful"
+
+  utter_happy:
+  - text: "Great, what you make feel happy!"
+  - text: "Nice!! what you did you today, that help you"
+  - text: "Its good to here that, can you share with us what help you to feel in this way"
+  - text: "Cool!! happiness is the blessing, what make you happy today"
+
+  utter_goodbye:
+  - text: "Bye, Take care of yourself"
+  - text: "It nice talking with you, see you soon"
+  - text: "Hope will meet soon"
+
+  utter_iamabot:
+  - text: "I am a mollify artificial agent, it my duty make you feel good"
+
+  utter_reason_ask:
+    - text: "will you like ti share what make you feel like this"
+    - text: "it is good to share your feelings, can you tell me what make you feel this"
+    - text: "Would you like to talk about the reasons for this feelings"
+    - text: "why are feeling like this, i am happy to hear you"
+
+  utter_reason_ask_happy:
+  - text: "Great, what you make feel happy!"
+  - text: "Nice!! what you did you today, that help you"
+  - text: "Its good to here that, can you share with us what help you to feel in this way"
+  - text: "Cool!! happiness is the blessing, what make you happy today"
+
+  utter_listen:
+  - text: "yes i am listening, what are the other things"
+  - text: "yes, that's all?"
+  - text: "any more reasons"
+  - text: "yes I am listening you"
+
+  utter_motivate:
+  - text: "you can share your thoughts with me, i am totally safe and secure"
+  - text: "Its good to share your hard feelings"
+  - text: "Its okay you can tell me anything"
+  - text: "I am here to help you, you can tell me it upto you and me only"
+  utter_unhappy:
+  - text: "its alright to feel not okay"
+  - text: "Its good to share your hard feelings"
+  - text: "its good you an feel sad, everybody does"
+  - text: "Its just another mental state"
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
