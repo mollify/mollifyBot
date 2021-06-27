@@ -130,3 +130,8 @@ websockets==8.1
 Werkzeug==2.0.1
 wrapt==1.12.1
 yarl==1.6.3
+django
+djongo
+djangorestframework
+pymongo
+django-cors-headers
