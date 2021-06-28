@@ -11,8 +11,8 @@ from concurrent.futures.thread import ThreadPoolExecutor
 from django.template.loader import get_template
 from .models import MongoModel
 
-# Todo save data to mongodb
-# Todo rasa save history
+# TODO create database useing models for large dataset
+# TODO encript data
 #
 thread = ThreadPoolExecutor(2)
 thread.submit(run_rasa_server)
@@ -44,13 +44,17 @@ def create_user(request):
     if request.method == "POST":
         name = request.data.get("name")
         unique_id = str(uuid.uuid1()).replace("-", "")
-        update_user_cache(unique_id, {"name": name, "userId": unique_id})
-        MongoModel.objects.mongo_insert_one({"name": name, "userId": unique_id})
+
+        msg1st = {"sender": "system", "message": f"hey {name}.", "time": time.time()}
+        msg2st = {"sender": "system", "message": "how are you felling today.", "time": time.time()}
+        update_user_cache(unique_id, {"name": name, "userId": unique_id, "message_history": [msg1st, msg2st]})
+        MongoModel.objects.mongo_insert_one({"name": name, "userId": unique_id, "message_history": [msg1st, msg2st]})
         template = get_template("index.html")
         form = MessageForm(initial={"userId": unique_id})
         # return return_response(message_history, "Success", code=200)
         return HttpResponse(
-            template.render({"form": form, 'userName': name, "UserId": unique_id, 'messages': []}, request))
+            template.render({"form": form, 'userName': name, "UserId": unique_id, 'messages': [msg1st, msg2st]},
+                            request))
     else:
         template = get_template("userForm.html")
         return HttpResponse(template.render({'form': UserForm()}, request))
@@ -78,7 +82,6 @@ def chatbot(request):
         update_user_cache(user_id, data)
         template = get_template("index.html")
         form = MessageForm(initial={"userId": user_id})
-        # return return_response(message_history, "Success", code=200)
         return HttpResponse(
             template.render(
                 {"form": form, 'userName': data.get("name"), "UserId": user_id, 'messages': message_history},
