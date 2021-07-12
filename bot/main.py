@@ -1,16 +1,16 @@
-# This is a sample Python script.
+import requests
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+sender = input("What is your name?\n")
 
+bot_message = ""
+while bot_message != "Bye":
+	message = input("What's your message?\n")
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+	print("Sending message now...")
 
+	r = requests.post('http://localhost:5002/webhooks/rest/webhook', json={"sender": sender, "message": message})
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+	print("Bot says, ")
+	for i in r.json():
+		bot_message = i['text']
+		print(f"{i['text']}")

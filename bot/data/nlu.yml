@@ -39,6 +39,18 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - yes
+    - sure
+    - ok
+    - why not
+    - ok great
+    - yes I did
+    - yeah, great
+    - pretty good
+    - fine
+    - You bet
+    - I sure did
+    - more or less
 
 - intent: deny
   examples: |
@@ -49,6 +61,14 @@ nlu:
     - don't like that
     - no way
     - not really
+    - none
+    - absolutely not
+    - no thanks
+    - didn't do any
+    - no I didn't
+    - could have been better
+    - not great
+    - nope
 
 - intent: mood_great
   examples: |
@@ -83,6 +103,11 @@ nlu:
     - extremly sad
     - so saad
     - so sad
+    - I am not feeling well
+    - i am unwell
+    - I do not feel well today
+    - i am in depression
+
 
 - intent: bot_challenge
   examples: |
@@ -101,7 +126,7 @@ nlu:
     - my father is disappointed with me
     - i hate myself as i m not good at my work
     - i don't like to spend time in public
-    - i want to say that few things are not working in my wa
+    - i want to say that few things are not working in my way
 
 - intent: end
   examples: |
@@ -112,3 +137,25 @@ nlu:
     - yeah
     - now this only
     - for now it's all
+
+- intent: out_of_scope
+  examples: |
+    - fuck
+    - shit
+    - that's not what I want to do
+    - wait stop
+    - you're no help
+    - this is no help at all
+    - how old are you
+    - I want to order a pizza
+    - tell me the weather
+    - this isn't working
+    - I already told you that
+    - don't like that
+    - I don't want to tell you that
+    - none of your business
+    - that's not right
+    - stop asking
+    - nevermind
+    - I want to do something else
+    - I changed my mind

@@ -11,3 +11,34 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+#- rule: handle the out of scope message
+#  steps:
+#  - intent: out_of_scope
+#  - action: utter_out_of_scope
+
+- rule: handle the out of scope message
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+
+#- rule: Activate feelings_form
+#  steps:
+#  - action: utter_reason_ask
+#  - intent: deny
+#  - action: action_reset_all_but_few_slots
+#  - action: utter_ask_share_feelings
+#  - action: feelings_form
+#  - active_loop: feelings_form
+#
+#- rule: Submit feelings_form
+#  condition:
+#  - active_loop: feelings_form
+#  steps:
+#  # form is deactivated
+#  - action: feelings_form
+#  - slot_was_set:
+#      - requested_slot: null
+#  - active_loop: null
+#  - action: utter_did_that_help
+
