@@ -10,198 +10,71 @@ intents:
   - bot_challenge
   - express
   - end
-  - out_of_scope
 
 responses:
   utter_greet:
-    - text: "Hey! How are you?"
-    - text:  "Hello, how are you doing today?"
-    - text:  "Hey, what brings you here today?"
-    - text:  "Hi, it’s nice to see you! How is your day going so far?"
-    - text:  "Hello, how can I help you?"
-    - text:  "Hi, how are you today?"
-    - text: "I am glad you are back. How are you (name)?"
-    - text:  "How would you describe your mood?"
+  - text: "Hey! How are you?"
+
 
   utter_cheer_up:
-    - text: "Here is something to cheer you up:"
-    - text: "try this, these are helpful tool to use"
-    - text: "these are some suggested exercises for the relaxation"
-    - text: "you must see one of this"
-      image: "https://i.imgur.com/nGF1K8f.jpg"
+  - text: "Here is something to cheer you up:"
+  - text: "try this, these are helpful tool to use"
+  - text: "these are some suggested exercises for the relaxation"
+  - text: "you must see one of this"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
 
   utter_did_that_help:
-    - text: "Did that help you?"
-    - text: "is this help you?"
-    - text: "hope you are feeling more relaxed now"
-    - text: "was that helpful"
-    - text: "On a scale of 0–10, how much it helped you?"
-    - text: "Try and consider if the exercise is making you feel better or worse"
-    - text: "How are you feeling after this exercise?"
-    - text: "Did  this activity helped you?"
-    - text: "How did this exercise make you feel?"
-    - text: "How does talking about make you feel now?"
+  - text: "Did that help you?"
+  - text: "is this help you?"
+  - text: "hope you are feeling more relaxed now"
+  - text: "was that helpful"
 
   utter_happy:
-    - text: "Great, what you make feel happy!"
-    - text: "Nice!! what you did you today, that help you"
-    - text: "Its good to here that, can you share with us what help
-            you to feel in this way"
-    - text: "Cool!! happiness is the blessing, what make you happy today"
-    - text: "What made you smile today?"
-    - text: "What was your favorite part of today?"
-    - text: "What did you see outside that was beautiful or unique?"
-    - text: "Who made you feel special today?"
-    - text: "What energizes you and makes you feel more upbeat?"
-    - text: "What are your top three feelings today?"
-    - text: "Did you try something that made you feel better?"
+  - text: "Great, what you make feel happy!"
+  - text: "Nice!! what you did you today, that help you"
+  - text: "Its good to here that, can you share with us what help you to feel in this way"
+  - text: "Cool!! happiness is the blessing, what make you happy today"
 
   utter_goodbye:
-    - text: "Bye, Take care of yourself"
-    - text: "It nice talking with you, see you soon"
-    - text: "Hope will meet soon"
-    - text: "We are making progress"
-    - text: "You have done well and moving towards a safer place already"
-    - text: "Are you proud?"
-    - text: "What did you learn?"
-    - text: "You didn’t give yup even when it was difficult. You did it!!"
-    - text: "You look really proud of yourself"
+  - text: "Bye, Take care of yourself"
+  - text: "It nice talking with you, see you soon"
+  - text: "Hope will meet soon"
 
   utter_iamabot:
-    - text: "I am a mollify artificial agent, it my duty make you feel good"
+  - text: "I am a mollify artificial agent, it my duty make you feel good"
 
   utter_reason_ask:
-    - text: "will you like to share what make you feel like this"
-    - text: "it is good to share your feelings,
-              can you tell me what make you feel this"
+    - text: "will you like ti share what make you feel like this"
+    - text: "it is good to share your feelings, can you tell me what make you feel this"
     - text: "Would you like to talk about the reasons for this feelings"
     - text: "why are feeling like this, i am happy to hear you"
-    - text: "Tell me more about what is making you feel that"
-    - text: "Tell me more about what makes you think that"
-    - text: "I see you are you are really ______ (feeling). Can you tell me more what you are feeling?"
-    - text: "I want to understand why that is important to you?"
-    - text: "How do you see the problem?"
-    - text: "How would you define the biggest challenge you’re facing right now?"
-    - text: "What are the things or people in your life that are causing problems for you?"
-    - text: "How does this problem typically make you feel?"
-    - text: "How do you feel when a problem pops up unexpectedly?"
-    - text: "Do you feel sad, mad, hopeless, stuck, or something else?"
-    - text: "What else do you feel? Tell me more."
-    - text: "When you tell me you feel angry, what else do you feel? Disappointed, hurt, betrayed, lonely, or something else?"
-    - text: "Tell me about a time when you were not experiencing these difficulties"
-    - text: "What thoughts have been circulating in your mind?"
-    - text: "What do you think caused the situation to worsen?"
 
   utter_reason_ask_happy:
-    - text: "Great, what you make feel happy!"
-    - text: "Nice!! what you did you today, that help you"
-    - text: "Its good to here that,
-              can you share with us what help you to feel in this way"
-    - text: "Cool!! happiness is the blessing, what make you happy today"
+  - text: "Great, what you make feel happy!"
+  - text: "Nice!! what you did you today, that help you"
+  - text: "Its good to here that, can you share with us what help you to feel in this way"
+  - text: "Cool!! happiness is the blessing, what make you happy today"
 
   utter_listen:
-    - text: "yes i am listening, what are the other things"
-    - text: "yes, that's all?"
-    - text: "any more reasons"
-    - text: "yes I am listening you"
-    - text: "Tell me more about it"
-    - text: "I have heard you and noted it all"
-    - text: "Tell me all the thoughts running in your mind one by one as they come"
-    - text: "I though it would be better to ask to understand you better"
-    - text: "Keep going"
-    - text: "These are all the unhelpful thoughts that we have identified"
-    - text: "Okay! We can do this together"
-    - text: "I have noted that"
-    - text: "Is there anything else that you would like to share?"
+  - text: "yes i am listening, what are the other things"
+  - text: "yes, that's all?"
+  - text: "any more reasons"
+  - text: "yes I am listening you"
 
   utter_motivate:
-    - text: "you can share your thoughts with me, i am totally safe and secure"
-    - text: "Its good to share your hard feelings"
-    - text: "Its okay you can tell me anything"
-    - text: "I am here to help you, you can tell me its upto you and me only"
+  - text: "you can share your thoughts with me, i am totally safe and secure"
+  - text: "Its good to share your hard feelings"
+  - text: "Its okay you can tell me anything"
+  - text: "I am here to help you, you can tell me it upto you and me only"
   utter_unhappy:
-    - text: "its alright to feel not okay"
-    - text: "Its good to share your hard feelings"
-    - text: "its good you an feel sad, everybody does"
-    - text: "Its just another mental state"
-    - text: "I am sorry to hear that. This must be hard on you."
-    - text: "That must have really hurt. I am here if you want to talk about it"
-    - text: "I understand that you are not happy. You don’t deserve to feel like this"
-    - text: "I understand how hard it is to feel what you are feeling. I am here for you."
-    - text: "It sounds really frustrating for you right now. I hear you. Tell me more about it"
-    - text: "It’s okay if you don’t feel ready for it (any event). There’s no rush. Do you want to talk about what’s worrying you?"
-    - text: "It sounds like you are feeling quite upset. It can’t be easy to feel that way. I am here if you want to talk about it."
-    - text: "I notice you are having a hard time. What do you need right now?"
-    - text: "It looks like today was a hard day for you"
-    - text: "You are worth of your life. You are loved, cared for and cherished, even though you may not feel that way right now"
-    - text: "What emotion do you feel often?"
-  utter_submit:
-    - text: "i am listening go on ..."
-    - text: "anything else you want to add in it "
-    - text: "yes, i am listening you"
-  utter_ask_share_feelings:
-    - text: "alright! what are doing now?"
-    - text: "If you could wave a magic wand, what positive changes would you make happen in your life?"
-  utter_anything_else:
-    - text: "do you want share anything else"
-  utter_out_of_scope:
-    - text: "Sorry, i didn't get you what you mean, can you please rephrase it"
-  utter_default:
-    - text: "Sorry I didn't get that. Can you rephrase?"
-  utter_ask_continue:
-    - text: "Sorry, didn't get that do you still want share your thoughts with me"
-actions:
-  - validate_feelings_form
-  - action_reset_all_but_few_slots
-#  - action_say_name
-#  - action_activity
-#  - action_solutions
-
-forms:
-  feelings_form:
-    required_slots:
-      share_feelings:
-        - type: from_text
-      validation_string:
-        - type: from_text
-
-  grounding_form:
-    required_slots:
-      can_see:
-        - type: from_text
-      can_feel:
-        - type: from_text
-      can_hear:
-        - type: from_text
-      can_smell:
-        - type: from_text
-      can_taste:
-        - type: from_text
+  - text: "its alright to feel not okay"
+  - text: "Its good to share your hard feelings"
+  - text: "its good you an feel sad, everybody does"
+  - text: "Its just another mental state"
 
 
-slots:
-  name:
-    type: text
-  mood:
-    type: text
-  reason_not_well:
-    type: text
-  share_feelings:
-    type: text
-  feelings_list:
-    type: list
-  validation_string:
-    type: bool
-  can_see:
-    type: text
-  can_feel:
-    type: text
-  can_hear:
-    type: text
-  can_smell:
-    type: text
-  can_taste:
-    type: text
+
 
 
 session_config:
