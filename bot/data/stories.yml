@@ -6,33 +6,35 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_remember_name
   - intent: mood_great
-  - action: utter_happy
+  - action: utter_reason_ask_happy
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+#- story: sad path 1
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: affirm
+#  - action: utter_happy
 
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+#- story: sad path 2
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_cheer_up
+#  - action: utter_did_that_help
+#  - intent: deny
+#  - action: utter_goodbye
 
 - story: session 1
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_remember_name
   - intent: mood_unhappy
   - action: utter_unhappy
   - action: utter_reason_ask
@@ -48,14 +50,26 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_remember_name
   - intent: mood_unhappy
   - action: utter_unhappy
   - action: utter_reason_ask
   - intent: deny
-  - action: utter_motivate
-  - intent: express
-  - action: utter_listen
-  - intent: express
+  - action: action_reset_all_but_few_slots
+  - action: feelings_form
+  - active_loop: feelings_form
+  - slot_was_set:
+      - requested_slot: share_feelings
+  - slot_was_set:
+      - share_feelings: watching movies
+  - slot_was_set:
+      - requested_slot: validation_string
+  - slot_was_set:
+      - validation_string: True
+  - action: validate_feelings_form
+  - active_loop: null
+  - slot_was_set:
+      - requested_slot: null
   - action: utter_did_that_help
   - intent: end
   - action: utter_goodbye
@@ -64,10 +78,129 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
+  - action: action_remember_name
   - intent: mood_great
-  - action: utter_happy
   - action: utter_reason_ask_happy
   - intent: express
   - action: utter_greet
   - intent: end
   - action: utter_goodbye
+
+- story: session 4
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: action_remember_name
+  - intent: mood_unhappy
+  - action: utter_unhappy
+  - action: utter_reason_ask
+  - intent: deny
+  - action: action_reset_all_but_few_slots
+  - action: feelings_form
+  - active_loop: feelings_form
+  - slot_was_set:
+      - requested_slot: share_feelings
+  - slot_was_set:
+      - share_feelings: watching movies
+  - slot_was_set:
+      - requested_slot: validation_string
+  - slot_was_set:
+      - validation_string: True
+  - action: validate_feelings_form
+  - active_loop: null
+  - slot_was_set:
+      - requested_slot: null
+  - action: utter_did_that_help
+  - intent: end
+  - action: utter_goodbye
+
+- story: feeling form continue
+  steps:
+  - action: utter_reason_ask
+  - intent: deny
+  - action: action_reset_all_but_few_slots
+  - action: feelings_form
+  - active_loop: feelings_form
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: feelings_form
+
+- story: feeling form continue
+  steps:
+  - action: utter_reason_ask
+  - intent: deny
+  - action: action_reset_all_but_few_slots
+  - action: feelings_form
+  - active_loop: feelings_form
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: feelings_form
+
+- story: feeling form quit
+  steps:
+  - action: utter_reason_ask
+  - intent: deny
+  - action: action_reset_all_but_few_slots
+  - action: feelings_form
+  - active_loop: feelings_form
+  - intent: out_of_scope
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+
+- story: out of scope
+  steps:
+  - intent: nlu_fallback
+  - action: utter_out_of_scope
+
+#- story: session 5
+#  steps:
+#  - intent: greet
+#  - action: utter_greet
+#  - intent: mood_unhappy
+#  - action: utter_unhappy
+#  - action: utter_reason_ask
+#  - intent: deny
+#  - action: action_reset_all_but_few_slots
+#  - action: grounding_form
+#  - active_loop: grounding_form
+#  - action: utter_ask_can_see
+#  - slot_was_set:
+#      - requested_slot: can_see
+#  - slot_was_set:
+#      - can_see: [door, window, floor, bed, chair]
+#  - action: utter_ask_can_feel
+#  - slot_was_set:
+#      - requested_slot: can_feel
+#  - slot_was_set:
+#      - can_feel: [cold, laptop, mobile, pencil]
+#  - action: utter_ask_can_feel
+#  - slot_was_set:
+#    - requested_slot: can_feel
+#  - slot_was_set:
+#      - can_feel: [ cold, laptop, mobile, pain ]
+#  - action: utter_ask_can_hear
+#  - slot_was_set:
+#    - requested_slot: can_hear
+#  - slot_was_set:
+#    - can_hear: [fan, dog's bark, ringtone]
+#  - action: utter_ask_can_smell
+#  - slot_was_set:
+#    - requested_slot: can_smell
+#  - slot_was_set:
+#    - can_smell: [air, food,]
+#  - action: utter_ask_can_taste
+#  - slot_was_set:
+#    - requested_slot: can_taste
+#  - slot_was_set:
+#    - can_taste: [tea]
+#  - action: validate_feelings_form
+#  - active_loop: null
+#  - slot_was_set:
+#      - requested_slot: null
+#  - action: utter_did_that_help
+#  - intent: end
+#  - action: utter_goodbye
+
