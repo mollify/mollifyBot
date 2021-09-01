@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     "chatbotHandler",
+    "chatroom",
+    "drf_yasg",
+    "rest_framework_swagger",
 ]
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -50,6 +53,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
 ]
+# SWAGGER_SETTINGS = {
+#     'resource_access_handler': 'app.views.resource_access_handler'
+# }
+REST_FRAMEWORK = {'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'}
 
 CORS_ALLOW_METHODS = [
     'DELETE',
@@ -97,7 +104,7 @@ DATABASES = {
         'NAME': "mollifyBot",
         'CLIENT': {
             'host': "mongodb://localhost:27017/mollifyBot"},
-    }
+        'j': True}
 }
 
 # Password validation
@@ -155,6 +162,7 @@ CORS_ALLOW_HEADERS = [
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 django_heroku.settings(locals())
